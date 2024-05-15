@@ -12,9 +12,10 @@
 /* Reset Button */
 
 button {
-    background-color: black;
-    color: white;
+    background-color: rgb(255, 255, 255);
+    color: rgb(0, 0, 0);
     border: none;
+    padding: 1rem;
     border-radius: 15px;
 }
 
@@ -62,22 +63,15 @@ button {
     margin: 3vh 0;
 }
 
-h1 {
-    font-size: 6vh;
+.container {
+    width: 1150px;
+    margin: 0 auto;
 }
 
-h2 {
-    font-size: 4vh;
+.img-fit{
+    height: 70vh;
+    object-fit: cover;
 }
-
-h3 {
-    font-size: 3vh;
-}
-
-h4 {
-    font-size: 2vh;
-}
-
 
 
 /* Main */
