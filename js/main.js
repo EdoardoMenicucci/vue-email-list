@@ -9,14 +9,20 @@ createApp({
             email: [],
             numeroUtente: 0,
             isLoading: false,
+            datoDiAppoggio: 0,
         }
     },
     methods: {
         // FUNZIONE PER GENERARE EMAIL TRAMITE AXIOS.GET BASATE SU UN INPUT UTENTE
-        generaEmail(numero) {
+
+        generaEmail(numero, datoDiAppoggio) {
+
             // A OGNI CLICK ELIMINO LE PRECEDENTI
             this.email = [];
-            for (let i = 0; i < numero; i++) {
+            // USO UN DATO DI APPOGGIO PER POI POTER PULIRE L'INPUT
+            datoDiAppoggio = numero
+            this.numeroUtente = 0;
+            for (let i = 0; i < datoDiAppoggio; i++) {
                 this.isLoading = true
                 // CHIAMATA axios
                 axios.get('https://flynn.boolean.careers/exercises/api/random/mail').then((result) => {
@@ -24,7 +30,7 @@ createApp({
                     let dati = result.data
                     console.log(dati)
                     this.email.push(dati.response);
-                    if (this.email.length == this.numeroUtente) {
+                    if (this.email.length == datoDiAppoggio) {
                         this.isLoading = false
                     }
                 })
